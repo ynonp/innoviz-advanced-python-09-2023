@@ -1,10 +1,15 @@
+from typing import Mapping, Sequence
+
 items = [{'a': 10, 'b': 20, '_id': 1},
          {'a': 12, 'b': 31, '_id': 2}]
 
-def print_item(items, index):
-   i = items[index]
-   del(i['_id'])
-   print(i)
+
+# This function just prints out a value from "items"
+# without changing "items" array
+def print_item(items: Sequence[Mapping[str, int]], index: int) -> None:
+    i = items[index]
+    del(i['_id'])
+    print(i)
 
 
 print(items)
