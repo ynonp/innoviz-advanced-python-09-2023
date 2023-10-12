@@ -25,3 +25,9 @@ while num > 0:
     num = num // 10
 
 print(sum_of_digits)
+
+import hashlib
+from pathlib import Path
+
+data = Path("/etc/passwd").read_bytes()
+print(hashlib.sha256(data).hexdigest())
