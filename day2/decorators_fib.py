@@ -1,11 +1,13 @@
 # 1 1 2 3 5 8 13 21 34
+from functools import lru_cache
+
 def cached(f):
     def inner(*args, **kwargs):
         ret = f(*args, **kwargs)
         return ret
     return inner
 
-@memoize
+@lru_cache(maxsize=10)
 def fib(n):
     print(f"calculating fib({n})")
     if n < 2:
