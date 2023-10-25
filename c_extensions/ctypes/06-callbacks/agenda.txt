@@ -1,0 +1,19 @@
+## Callback Functions
+
+1. The decorator @CFUNCTYPE declares a function as a callback function
+
+2. A callback function is called from C to python, for example:
+  - If C code needs to ask python something to continue (a compare function for a sort algorithm)
+  - If C code needs to report something to python (finished reading a file, got some data from network)
+
+3. From C - the function looks like any other function pointer
+
+4. From Python - it looks like a normal python function
+
+## Compilation Instructions
+
+To compile the code I use:
+
+```
+gcc -shared -fPIC -o libmydemo.so threadedcode2.c
+```

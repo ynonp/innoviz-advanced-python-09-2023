@@ -1,0 +1,24 @@
+# Passing primitive arguments to C
+
+The 3 native python data types that we can pass as-is to C are:
+
+1. None           -> Turns into NULL in C
+
+2. b"..." (Bytes) -> Turns into const char * in C
+
+3. int            -> Turns into int in C
+
+
+/////////////////////
+
+1. The C function mkdir creates a new directory. Use it to create one (name it as you want)
+
+2. The C function rmdir deletes a directory. Use it to delete the directory you created
+
+3. The C function strlen returns the size of a string. Use it to calculate the size of the text "hello c types"
+
+4. The C function abs returns the absolute value of a number. Call it to find the absolute value of -5
+
+5. The C function pow() takes a number by power of n, for example pow(2, 3) == 8. What happens if you call it from your python code? why?
+
+6. The C function truncate() takes a file name and a size and sets the size of the file to the input size, truncating data at the end. Use truncate() from python to reduce a file size to 3 bytes. What happens if the file is not there? how can you detect the error?

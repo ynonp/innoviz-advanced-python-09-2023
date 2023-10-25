@@ -1,0 +1,33 @@
+# CTypes
+
+ctypes is a foreign function library for Python. It provides C compatible data types, and allows calling functions in DLLs or shared libraries. It can be used to wrap these libraries in pure Python.
+
+Our first introduction to ctypes is via the function:
+
+ctypes.cdll.LoadLibrary('...')
+
+Which loads a DLL
+
+
+------
+
+The starter.py program reads libc on linux and saves it into a python variable. It then calls the function rand() to get a random number.
+
+1. Run the code (if using windows, change DLL path accordingly)
+
+2. Add the folllowing line to the end of the file: 
+
+   ```
+   print(dir(libc))
+   ```
+
+   Did the code work? What was the only function name that was printed?
+
+3. Now let's try to call a function with arguments. You'll notice that every time we run our python code we get the same random number. Add the following call before calling rand():
+
+   ```
+   libc.srand(7)
+   ```
+
+   What happened? What will happen if you choose different numbers? If you pass floating point values? A string?
+

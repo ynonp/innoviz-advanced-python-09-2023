@@ -1,0 +1,11 @@
+## Errno
+
+1. Many C functions will set a global variable called errno to hold an error code if something went wrong.
+
+2. ctypes has a full support for errno and the function get_errno() returns its value (which is the last reported error)
+
+3. The starter tries to use fopen to create a file. Set a path to a valid file to see the code works.
+
+4. Now change the destination to an invalid path to see the code fails and prints the error value.
+
+5. Fix back to a valid file path, and use fputs() to write something to the file

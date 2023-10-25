@@ -1,0 +1,2 @@
+/home/linuxbrew/.linuxbrew/lib/python3.8/site-packages/spam.cpython-38-x86_64-linux-gnu.so
+/home/linuxbrew/.linuxbrew/lib/python3.8/site-packages/PackageName-1.0-py3.8.egg-info

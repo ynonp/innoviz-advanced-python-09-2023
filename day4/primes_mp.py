@@ -2,13 +2,15 @@
 Count prime numbers from threads
 """
 import math
-import threading
+import multiprocessing
 import cProfile
 primes_count = 0
 
-lock = threading.Lock()
+lock = multiprocessing.Lock()
 
-# GIL
+# multiprocessing
+# 1. Each task is executed in its own python interpreter (no GIL)
+# 2. Each task (using its own interpreter) also has its own memory
 
 
 def is_prime(n: int):
@@ -18,11 +20,9 @@ def is_prime(n: int):
     return True
 
 
-def primes_in_range(start: int, end: int):
-    global primes_count
-    result = sum([is_prime(i) for i in range(start, end)])
-    with lock:
-        primes_count += result
+def primes_in_range(range_tuple):
+    start, end = range_tuple
+    return sum([is_prime(i) for i in range(start, end)])
 
 
 # Exercise: split this work to multiple threads, and see if you can
@@ -36,15 +36,10 @@ def without_threads():
 
 
 def with_threads():
-    global primes_count
-    primes_count = 0
-    t1 = threading.Thread(target=primes_in_range, args=(2, 500_000))
-    t2 = threading.Thread(target=primes_in_range, args=(500_000, 1_000_000))
-    t1.start()
-    t2.start()
-    t1.join()
-    t2.join()
-    print(primes_count)
+    with multiprocessing.Pool(processes=4) as pool:
+        # results = pool.map(primes_in_range, [(2, 500_000), (500_000, 1_000_000)])
+        results = pool.map(is_prime, range(2, 1_000_000))
+        print(sum(results))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,50 @@
+~~~~~~~~~~~~~
+C/Python API
+~~~~~~~~~~~~~
+
+1. Write a function to calculate the n-th fibonacci number in C and in Python
+   Which one is faster? the C implementation or python?
+   What are the limitations of your C implementation?
+
+2. Write a C function to reverse a string
+
+3. Write a C function larger_than that takes a number n and a list of values and
+   returns a list of all values larger than n
+
+4. Write a C function that returns a random number
+
+5. Write a C function that returns a list of 5 random numbers
+
+~~~~~~~~~
+Callbacks
+~~~~~~~~~
+
+2. Create a C program that uses threads and callbacks to implement a timer in python
+   (set callback and call it every second)
+
+3. Write a C program that reads a file in thread and later calls Python's
+   callback function with the number of lines in the file
+
+~~~~~~~~~~~~
+Exceptions
+~~~~~~~~~~~~
+
+1. Write a C function that always throws an exception
+
+2. Write a C function that throws a custom exception
+
+3. Write a C function that calls Python's callback and handles its exception
+
+
+
+~~~~~~~~~~
+Questions
+~~~~~~~~~~
+
+1. Can we access python's custom class data from C ? What happens when sending a python object to C ?
+
+2. How to write thread safe extension? How to call it from multiple threads?
+
+3. How to detect memory leaks in extensions?
+
+

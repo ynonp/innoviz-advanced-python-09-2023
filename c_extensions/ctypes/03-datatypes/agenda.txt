@@ -1,0 +1,30 @@
+# Python <-> C Data Types
+
+The library ctypes defines many wrapper objects for common type conversion between python and C.
+
+They are conveniently named c_<type>, for example: c_double, c_int, c_short, c_byte, c_void_p, c_char_p.
+Full list is here:
+https://docs.python.org/3/library/ctypes.html#fundamental-data-types
+
+We use `function.restype = <type>` to tell ctypes what the return type of a function is.
+We use `function.argtypes = [<type>, <type>, ...] to tell ctypes what input arguments are expected.
+
+//////////////////////
+
+1. The starter calls libc.pow twice.
+   First we'll get some weird value because input and output are sent in the wrong format.
+   In the second call values are sent and read correctly so correct value is printed
+
+2. print dir(c_int()) and check what can this object do
+
+3. Assume the following line in the program:
+
+```
+x = c_int(7)
+```
+
+   Find out how to print the 7 using "x"
+
+4. Can you change the value of `x` after its creation?
+
+5. The functions create_string_buffer and create_unicode_buffer will create a mutable array of bytes / chars. Pass "hello world" both as a unicode string and as a bytes array to C's strlen and check its length.

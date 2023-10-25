@@ -1,0 +1,26 @@
+# Structure and Pointers
+
+1. Many C functions expect to receive or return structures, so ctypes has built-in support for them.
+
+2. We define a structure by creating a class inheriting Structure.
+
+3. We'll usually pass a pointer(struct) from python to C.
+
+4. Use POINTER(c_int) to create a Pointer-to-int type
+
+5. Use pointer(c_int(7)) to create a pointer to a concrete value
+
+////////////////////////////
+
+1. Run the starter code
+
+2. The starter code defines a new struct to hold Timeval values
+
+3. The function localtime takes a long value that represents a timestamp (seconds since epoch) and returns the struct described here:
+  https://www.cplusplus.com/reference/ctime/tm/
+
+4. Create a python implementation of the struct
+
+5. Call localtime from python and verify the struct holds the correct data
+
+
